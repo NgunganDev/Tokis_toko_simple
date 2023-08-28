@@ -1,0 +1,20 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tokis_app/services/bluetooth_printer_service.dart';
+import 'package:tokis_app/services/cart_service.dart';
+import 'package:tokis_app/services/chart_service.dart';
+import 'package:tokis_app/services/db_service.dart';
+import 'package:tokis_app/services/popup_service.dart';
+
+final dbService = Provider((ref) => DBService());
+final popService = Provider((ref) => PopUpService());
+final cartService = Provider((ref) => CartService());
+final chartServe = Provider((ref) => ChartService());
+final btServe = Provider((ref) => PrinterBluetooth());
+StateProvider pageState = StateProvider<int>((ref) => 0);
+StateProvider myChartState = StateProvider<int>((ref) => 0);
+StateProvider stateTheme = StateProvider<int>((ref) => 0);
+StateProvider lineStep = StateProvider<bool>((ref) => false);
+StateProvider orderTitle = StateProvider<bool>((ref) => false);
+StateProvider stringPath = StateProvider((ref) => '');
+StateProvider listOfAct = StateProvider<List<String>>((ref) => ['update', 'delete']);
+StateProvider theAct = StateProvider<String>((ref) => '');
