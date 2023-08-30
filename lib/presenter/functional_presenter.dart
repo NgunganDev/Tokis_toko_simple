@@ -67,7 +67,6 @@ class FunctionalPresenter extends ChartService {
   }
 
   List<Product> get fetchAllData {
-    print(dataService.fetchProduct().length);
     return dataService.fetchProduct().toList();
   }
 
