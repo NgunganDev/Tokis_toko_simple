@@ -41,8 +41,11 @@ class _MyLineChartState extends ConsumerState<MyLineChart> {
           touchTooltipData: LineTouchTooltipData(
         tooltipBgColor: Theme.of(context).secondaryHeaderColor,
         getTooltipItems: (touchedSpots) {
+          var isd = touchedSpots.map((e) {
+            return e.y;
+          });
           return [
-            LineTooltipItem('${touchedSpots} index',
+            LineTooltipItem('${isd.last.toInt()} index',
                 const TextStyle(fontWeight: FontWeight.bold))
           ];
         },

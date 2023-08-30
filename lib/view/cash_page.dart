@@ -35,7 +35,7 @@ class _CashPageState extends ConsumerState<CashPage> {
       child: Container(
         width: size.width,
         height: size.height,
-        color:  Theme.of(context).hintColor,
+        color: Theme.of(context).hintColor,
         padding: EdgeInsets.symmetric(
             vertical: size.height * 0.01, horizontal: size.width * 0.02),
         child: Column(
@@ -59,12 +59,22 @@ class _CashPageState extends ConsumerState<CashPage> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  TextButton(onPressed: (){
-                    _mainP!.showCalendar(context);
-                  }, child: Text('select date', style: TextStyle(
-                    fontSize: size.height * 0.02,
-                    fontWeight: FontWeight.bold
-                  ),),)
+                  TextButton(
+                    onPressed: () async {
+                      // await _mainP!.showCalendar(context).then((value) {
+                      //   setState(() {
+                      //     _present!.toDate = value;
+                      //   });
+                      // });
+                      print(_present!.theDate);
+                    },
+                    child: Text(
+                      'select date',
+                      style: TextStyle(
+                          fontSize: size.height * 0.02,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -95,7 +105,7 @@ class _CashPageState extends ConsumerState<CashPage> {
                         style: TextStyle(
                             fontSize: size.height * 0.02,
                             fontWeight: FontWeight.w400,
-                            color:  Theme.of(context).primaryColor),
+                            color: Theme.of(context).primaryColor),
                       ),
                     ),
                   ],
@@ -152,7 +162,7 @@ class _CashPageState extends ConsumerState<CashPage> {
                                     children: [
                                       Icon(
                                         Icons.arrow_upward_outlined,
-                                        color:  Theme.of(context).primaryColor,
+                                        color: Theme.of(context).primaryColor,
                                         size: size.height * 0.03,
                                       ),
                                       Text(

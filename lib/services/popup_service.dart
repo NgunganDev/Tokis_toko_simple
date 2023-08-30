@@ -99,20 +99,13 @@ class PopUpService extends DBService {
   }
 
   Future<DateTime> showCalen(BuildContext ctx) async {
-    DateTime res = DateTime.now();
-    showDatePicker(
-            context: ctx,
-            initialDate: DateTime.now(),
-            firstDate: DateTime(2000),
-            lastDate: DateTime.now().add(const Duration(days: 7)))
-        .then((value) {
-      if (value == null) {
-        return null;
-      } else {
-        res = value;
-      }
-    });
-    return res;
+    final DateTime? res = await showDatePicker(
+        context: ctx,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        lastDate: DateTime.now().add(const Duration(days: 7)));
+    print(res);
+    return res!;
   }
 
   void showAlert(BuildContext context, VoidCallback cbYes, VoidCallback cbNo) {

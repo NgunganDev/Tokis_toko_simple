@@ -50,6 +50,7 @@ class ChartService {
         total += itemPrice(y.totalPrice, y.productAmount);
       }
     }
+    print(total);
     return total;
   }
 
@@ -70,7 +71,8 @@ class ChartService {
 
   List<ChartData> fetchByWeek() {
     DateTime isNow = myDate;
-    DateTime startWeek = isNow.subtract(Duration(days: isNow.weekday - 1));
+    DateTime startWeek = isNow.subtract(
+        Duration(days: isNow.weekday == 0 ? isNow.weekday : isNow.weekday));
     DateTime endWeek = isNow.add(Duration(days: 7 - isNow.weekday));
     return fetchChartData().where((element) {
       return element.orderDate.isAfter(startWeek) &&
@@ -193,7 +195,7 @@ class ChartService {
   int orderToday() {
     int total = 0;
     List<ChartData> data = fetchChartData().where((element) {
-      return element.orderDate.day == DateTime.now().day;
+      return element.orderDate.day == myDate.day;
     }).toList();
     total += data.length;
     return total;
