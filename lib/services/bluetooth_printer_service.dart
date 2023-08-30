@@ -6,6 +6,7 @@ class PrinterBluetooth extends StateNotifier<List<BluetoothDevice>> {
   PrinterBluetooth() : super([]);
   final BlueThermalPrinter _bt = BlueThermalPrinter.instance;
 //  final BluetoothEnable _enabled
+// error service
   List<BluetoothDevice> devices = [];
   bool isConnected = false;
   bool deviceDone = false;
