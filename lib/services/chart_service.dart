@@ -34,7 +34,7 @@ class ChartService {
       await chartData
           .add(ChartData(listData: value, orderDate: DateTime.now()));
     } else {
-      print('no data');
+      print('no datas');
     }
     print('add data to chart');
   }
