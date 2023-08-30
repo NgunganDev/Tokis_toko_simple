@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -64,6 +66,12 @@ class ChartPresenter {
   int myAvr(List<ChartData> datas) {
     return service.avrOrderWeek(datas);
   }
+
+  set toDate (DateTime val){
+    service.dateTo = val;
+  }
+
+  DateTime get theDate => service.myDate;
 
   List<int> get myProgressLine => service.dataLine();
 
