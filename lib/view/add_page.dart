@@ -131,6 +131,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                           bl: 'Rp${_present!.balanceInWeek}',
                           nameC: 'Balance',
                           ic: Icons.payment,
+                          arrow: _present!.myArrow,
                         ),
                         SizedBox(
                           width: size.width * 0.03,
@@ -140,6 +141,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                           bl: '3',
                           nameC: 'Debt',
                           ic: Icons.deblur_outlined,
+                          arrow: false,
                         ),
                         SizedBox(
                           width: size.width * 0.02,

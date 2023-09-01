@@ -37,6 +37,8 @@ class FunctionalPresenter extends ChartService {
     return tcategory;
   }
 
+  bool get myArrow => checkArrow(balanceInWeek.toDouble());
+
   void showPopProduct(
       BuildContext ctx,
       TextEditingController contProductName,

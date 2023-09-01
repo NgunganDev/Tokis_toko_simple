@@ -72,7 +72,7 @@ class ChartService {
   List<ChartData> fetchByWeek() {
     DateTime isNow = myDate;
     DateTime startWeek = isNow.subtract(
-        Duration(days: isNow.weekday == 0 ? isNow.weekday : isNow.weekday));
+        Duration(days: isNow.weekday == 0 ? isNow.weekday : isNow.weekday - 1));
     DateTime endWeek = isNow.add(Duration(days: 7 - isNow.weekday));
     return fetchChartData().where((element) {
       return element.orderDate.isAfter(startWeek) &&

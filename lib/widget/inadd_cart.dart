@@ -7,7 +7,8 @@ class InAddCard extends StatelessWidget {
   final IconData ic;
   final String nameC;
   final int value;
-  const InAddCard({super.key, required this.bl, required this. nameC, required this.ic, required this.value});
+  final bool arrow;
+  const InAddCard({super.key, required this.bl, required this. nameC, required this.ic, required this.value, required this.arrow});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,8 @@ class InAddCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.arrow_upward, color: ColorUse.secC,),
+                      arrow ?
+                      const Icon(Icons.arrow_downward, color: ColorUse.secC,) : const Icon(Icons.arrow_upward, color: ColorUse.secC,),
                         SizedBox(
                           width: size.width * 0.02,
                         ),
