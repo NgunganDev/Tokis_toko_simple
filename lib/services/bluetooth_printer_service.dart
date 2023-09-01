@@ -2,8 +2,7 @@ import 'package:blue_thermal_printer/blue_thermal_printer.dart';
 import 'package:bluetooth_enable_fork/bluetooth_enable_fork.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PrinterBluetooth extends StateNotifier<List<BluetoothDevice>> {
-  PrinterBluetooth() : super([]);
+class PrinterBluetooth  {
   final BlueThermalPrinter _bt = BlueThermalPrinter.instance;
 //  final BluetoothEnable _enabled
 // error service
@@ -15,11 +14,11 @@ class PrinterBluetooth extends StateNotifier<List<BluetoothDevice>> {
     // bool? isConnect = await _bt.isConnected;
     try {
         devices = await _bt.getBondedDevices();
-        devices.forEach((element) { 
-          state.add(element);
-        });
+        // devices.forEach((element) { 
+        //   // state.add(element);
+        // });
         print(devices);
-        state = devices;
+        // state = devices;
       // state = await _bt.getBondedDevices();
       _bt.onStateChanged().listen((event) {
         switch (event) {
@@ -30,7 +29,7 @@ class PrinterBluetooth extends StateNotifier<List<BluetoothDevice>> {
             print('state off');
             isConnected = false;
           case BlueThermalPrinter.STATE_OFF:
-            state.clear();
+            // state.clear();
             print('off');
             isConnected = false;
           default:
