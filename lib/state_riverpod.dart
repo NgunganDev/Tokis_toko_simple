@@ -18,3 +18,4 @@ StateProvider orderTitle = StateProvider<bool>((ref) => false);
 StateProvider stringPath = StateProvider((ref) => '');
 StateProvider listOfAct = StateProvider<List<String>>((ref) => ['update', 'delete']);
 StateProvider theAct = StateProvider<String>((ref) => '');
+StateProvider connectBT = StateProvider<bool>((ref) => false);
